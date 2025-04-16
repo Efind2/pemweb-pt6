@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Afif">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo-x">
+                <img src="{{ url_for('static', filename='logox.png') }}" alt="logo">
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='home.png') }}" alt="">
+                <span>Beranda</span>
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='search.png') }}" alt="">
+                <span>Jelajahi</span>
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='notiv.png') }}" alt="">
+                <span>Notifikasi</span>
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='mail.png') }}" alt="">
+                <span>Pesan</span>
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='grok.png') }}" alt="">
+                <span>Grok</span>
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='Komunitas.png') }}" alt="">
+                <span>Komunitas</span>
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='profil.png') }}" alt="">
+                <span>Profil</span>
+            </div>
+            <div class="sidebar-option">
+                <img src="{{ url_for('static', filename='option.png') }}" alt="">
+                <span>Lainnya</span>
+            </div>
+
+            <button id="posting">Posting</button>
+            <div style="margin-top: 20px;">
+                <button class="akun-btn">
+                    <div class="akun-profile">
+                        <img src="{{ url_for('static', filename='profilephoto.jpeg') }}" alt="">
+                        <div class="akun-user">
+                            <strong>Username</strong>
+                            <small>@username</small>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-header">
+                <span class="back-btn">←</span>
+                <div class="username">
+                    <strong style="margin-top: 5px;display:block">Username</strong>
+                    <small style="font-size: 11px;">0 postingan</small>
+                </div>
+            </div>
+            <div class="cover-photo">
+                <img src="{{ url_for('static', filename='backround.jpg') }}" alt="Cover Photo">
+            </div>
+            <img class="profile-picture" src="{{ url_for('static', filename='profilephoto.jpeg') }}" alt="fotoprofil">
+            <div class="profile-info">
+                <div class="nama">
+                    <span><b>Afif</b></span>
+                    <small style="color: gray;">@Afif</small>
+                </div>
+                <p class="gabung" style="color: gray;">Bergabung Februari 2023</p>
+                <div class="text-mengikuti">
+                    <b>24  </b>
+                    <p style="color: gray;">Mengikuti  </p><b>4  </b>
+                    <p style="color: gray;">Pengikut</p>
+                    
+                </div>
+                
+                <button class="profile-edit">Edit Profile</button>
+            </div>
+            <div class="tab-bar">
+                <div class="tab active" onclick="switchTab(this, 'postingan')">Postingan</div>
+                <div class="tab" onclick="switchTab(this, 'balasan')">Balasan</div>
+                <div class="tab" onclick="switchTab(this, 'sorotan')">Sorotan</div>
+                <div class="tab" onclick="switchTab(this, 'artikel')">Artikel</div>
+                <div class="tab" onclick="switchTab(this, 'media')">Media</div>
+                <div class="tab" onclick="switchTab(this, 'suka')">Suka</div>
+            </div>
+            <div id="content"> </div>
+            </div>
+        </div>
+
+        <div class="right-bar">
+
+            <div class="search">
+                <input type="text" placeholder="cari">
+            </div>
+
+            <div class="right-top">
+                <h4>Anda mungkin suka</h4>
+                <div class="right-profile">
+                    <img src="{{ url_for('static', filename='profilephoto.jpeg') }}" alt="">
+                    <div class="nama-profile">
+                        <strong>Ada</strong>
+                        <small>@ada</small>
+                    </div>
+                    <button class="follow">Ikuti</button>
+                </div>
+                <div class="right-profile">
+                    <img src="{{ url_for('static', filename='profilephoto.jpeg') }}" alt="">
+                    <div class="nama-profile">
+                        <strong style="display: block;">Ada</strong>
+                        <small style="font-size: 13px;color:gray">@ada</small>
+                    </div>
+                    <button class="follow">Ikuti</button>
+                </div>
+                <div class="right-profile">
+                    <img src="{{ url_for('static', filename='profilephoto.jpeg') }}" alt="">
+                    <div class="nama-profile">
+                        <strong>Ada</strong>
+                        <small>@ada</small>
+                    </div>
+                    <button class="follow">Ikuti</button>
+                </div>
+                <a href="#" class="tampilkan-lebih">Tampilkan lebih banyak</a>
+            </div>
+            <div class="right-bottom">
+                <h4>Sedang hangat dibicarakan</h4>
+                <div class="tranding">
+                    <strong style="font-size: 14px;">#RamadhanExtraSeru</strong>
+                    <span style="font-size: 14px;color:gray">Cek Promonya di Tokopedia!</span>
+                    <p style="font-size: 12px;color:gray">Promoted by Tokopedia</p>
+                    <span class="trend-option">•••</span>
+                </div>
+                <div class="tranding">
+                    <strong style="font-size: 14px;">#RamadhanExtraSeru</strong>
+                    <span style="font-size: 14px;color:gray">Cek Promonya di Tokopedia!</span>
+                    <p style="font-size: 12px;color:gray">Promoted by Tokopedia</p>
+                    <span class="trend-option">•••</span>
+                </div>
+                <div class="tranding">
+                    <strong style="font-size: 14px;">#RamadhanExtraSeru</strong>
+                    <span style="font-size: 14px;color:gray">Cek Promonya di Tokopedia!</span>
+                    <p style="font-size: 12px;color:gray">Promoted by Tokopedia</p>
+                    <span class="trend-option">•••</span>
+                </div>
+                <a href="#" class="tampilkan-lebih">Tampilkan lebih banyak</a>
+            </div>
+            <div class="grok">
+                <button class="btn-grok">
+                    <img src="{{ url_for('static', filename='grok.png') }}" alt="logo grok" style="height: 22px; width: 30px;">
+                    <span>GROK</span>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <div id="popupModal" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <form id="postForm" method="POST" action="{{ url_for('post_status') }}">
+            <div class="popup-header">
+                <img src="{{ url_for('static', filename='profilephoto.jpeg') }}" alt="foto profil" class="popup-profile">
+                <textarea name="content" placeholder="Apa yang sedang terjadi?" required></textarea>
+            </div>
+            <button type="submit" class="popup-post-btn">Posting</button>
+            </form>
+        </div>
+    </div>
+    <div id="notifSuccess" class="notif-success">
+    Postingan berhasil!
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("posted") === "true") {
+            showNotif("Postingan berhasil!");
+        }
+    </script>
+
+</body>
+
+</html>

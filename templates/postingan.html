@@ -1,0 +1,46 @@
+<style>
+    .tweet {
+      display: flex;
+      align-items: flex-start;
+      padding: 16px;
+      border-bottom: 1px solid #333;
+      max-width: 600px;
+    }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+    .content {
+      flex: 1;
+    }
+    .user {
+      font-weight: bold;
+    }
+    .handle {
+      color: #aaa;
+    }
+    .time {
+      color: #aaa;
+      margin-left: 5px;
+    }
+    .text {
+      margin: 5px 0;
+    }
+  </style>
+
+<body>
+    {% for tweet in tweets %}
+    <div class="tweet">
+    <img src="{{ url_for('static', filename='profilephoto.jpeg') }}" class="avatar" alt="avatar">
+    <div class="content">
+        <div>
+            <span class="user">{{ tweet.username }}</span>
+            <span class="time">· {{ tweet.created_at.strftime('%d %b') }}</span>
+        </div>
+        <div class="text">{{ tweet.content }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</body>

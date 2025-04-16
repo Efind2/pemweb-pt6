@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <main id="main">
+            <div class="main-logo">
+                <img src="{{ url_for('static', filename='logox.png') }}" alt="logo" />
+            </div>
+
+            <div class="main-action">
+                <div class="main-action-text">
+                    <h1>Happening now</h1>
+                    <h2>Join today.</h2>
+                </div>
+                <div class="main-action-button">
+                    <button>
+                        <img src="{{ url_for('static', filename='google.png') }}" alt="google" />
+                        Sign in with Google
+                    </button>
+                    <button>
+                        <img src="{{ url_for('static', filename='apple.png') }}" alt="apple" />
+                        Sign in with Apple
+                    </button><br />
+                    <button id="btn-create-account">Create account</button>
+                    <p>
+                        By signing up, you agree to the <a href="#">Terms of Service</a> and
+                        <a href="#">Privacy Policy</a>, including <a href="#">Cookie Use.</a>
+                    </p>
+                    <br />
+                    <h4>Already have an account?</h4>
+                    <button id="btn-sign-in">Sign in</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-link">
+                <a href="https://about.x.com/en">About</a>
+                <a href="https://help.x.com/en/using-x/download-the-x-app">Download the X app</a>
+                <a href="https://help.x.com/en">Help Center</a>
+                <a href="https://x.com/en/tos">Terms of Service</a>
+                <a href="https://x.com/en/privacy">Privacy Policy</a>
+                <a href="https://help.x.com/en/rules-and-policies/x-cookies">Cookie Policy</a>
+                <a href="https://help.x.com/en/resources/accessibility">Accessibility</a>
+                <a href="https://business.x.com/en/help/troubleshooting/how-x-ads-work">Ads info</a>
+                <a href="https://blog.x.com/">Blog</a>
+                <a href="https://careers.x.com/en">Careers</a>
+                <a href="https://about.x.com/en/who-we-are/brand-toolkit">Brand Resource</a>
+                <a href="https://business.x.com/en/advertising?ref=gl-tw-tw-twitter-advertise">Advertising</a>
+                <a href="https://business.x.com/en">Marketing</a>
+                <a
+                    href="https://business.x.com/en?ref=web-twc-ao-gbl-twitterforbusiness&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=twitterforbusiness">X
+                    for Business</a>
+                <a href="https://developer.x.com/en">Developers</a>
+                <a href="https://x.com/i/directory/profiles">Directory</a>
+                <a href="https://x.com/settings/account/personalization">Settings</a>
+            </div>
+            <p>© 2025 X Corp.</p>
+        </footer>
+
+        <div id="modal-sign-up">
+            <div class="modal">
+                <div class="modal-top">
+                    <img src="assets/close-svgrepo-com.svg" alt="close" id="close" />
+                    <img src="{{ url_for('static', filename='logox.png') }}" alt="logo" />
+                </div>
+
+                <div class="modal-form">
+                    <h1>Create your account</h1>
+                    <div class="modal-form-input">
+                        <form method="post">
+                            <input type="hidden" name="action" value="register">
+                            <input type="text" class="form-control" placeholder="Username" name="username" required />
+                            <input type="password" class="form-control" placeholder="Password" name="password" required /><br />
+                            <button type="submit" class="btn-input" id="create">Create</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-sign-in">
+            <div class="modal-in">
+                <div class="modal-top-in">
+                    <img src="assets/close-svgrepo-com.svg" alt="close" id="close-in" />
+                    <img src="{{ url_for('static', filename='logox.png') }}" alt="logo" />
+                </div>
+
+                <div class="modal-form-in">
+                    <h1>Login your account</h1>
+                    <div class="modal-form-input-in">
+                        <form method="post">
+                            <form method="post">
+                                <input type="hidden" name="action" value="login">
+                                <input type="text" class="form-control-in" name="username" placeholder="Username" required />
+                                <input type="password" class="form-control-in" name="password" placeholder="Password" required /><br />
+                            
+                                <label>
+                                    <input type="checkbox" name="remember" /> Ingat saya
+                                </label><br />
+                            
+                                <button class="btn-input-in" id="next-in" type="submit">Login</button>
+                            </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
